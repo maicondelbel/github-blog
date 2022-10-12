@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { AxiosError } from 'axios'
 import { createContext, ReactNode, useEffect, useState } from 'react'
 import { api } from '../lib/axios'
 
@@ -59,6 +60,8 @@ export function ApiContextProvider({ children }: IApiContextProviderProps) {
 
       setProfile(response.data)
     } catch (error) {
+      const err = error as AxiosError
+      console.log(err.response?.data)
       alert('Erro ao receber os dados do usuário!')
     }
   }
@@ -77,6 +80,8 @@ export function ApiContextProvider({ children }: IApiContextProviderProps) {
         }
       })
     } catch (error) {
+      const err = error as AxiosError
+      console.log(err.response?.data)
       alert('Erro ao receber os dados das postagens!')
     }
   }

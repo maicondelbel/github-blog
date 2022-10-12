@@ -22,9 +22,9 @@ export function FindPostsForm() {
       <FindPostsFormHeader>
         <Title size="small">Publicações</Title>
         <span>
-          {posts?.total > 1
-            ? `${posts?.total} publicações`
-            : `${posts?.total} publicação`}
+          {posts?.total === 1
+            ? `${posts?.total} publicação`
+            : `${posts?.total} publicações`}
         </span>
       </FindPostsFormHeader>
       <InputContainer
