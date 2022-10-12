@@ -9,7 +9,7 @@ export const PostInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  span {
+  h1 {
     margin-top: 1.25rem;
   }
 
@@ -23,6 +23,7 @@ export const PostInfoHeaderBoxContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
   a {
     color: ${(props) => props.theme.blue};
     text-transform: uppercase;

@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import { TitleContainer } from './style'
 
 interface ITitleProps {
-  size: 'small' | 'middle' | 'large'
+  size: 'small' | 'medium' | 'large'
   children: ReactNode
 }
 
