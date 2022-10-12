@@ -16,10 +16,10 @@ import { Link } from './../Link/index'
 import { IconList } from '../IconList'
 import { IconListItem } from '../IconList/IconListItem'
 import { useContext } from 'react'
-import { UserAndPostsContext } from '../../contexts/UserAndPostsContext'
+import { ApiContext } from '../../contexts/ApiContext'
 
 export function Profile() {
-  const { profile } = useContext(UserAndPostsContext)
+  const { profile } = useContext(ApiContext)
 
   return (
     <ProfileContainer>

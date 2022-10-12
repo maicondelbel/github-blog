@@ -30,22 +30,20 @@ interface IPosts {
   items: IPostsItems[]
 }
 
-interface IUserAndPostsContextType {
+interface IApiContextType {
   profile: IProfile
   posts: IPosts
   fetchProfile: () => Promise<void>
   fetchPosts: (query?: string) => Promise<void>
 }
 
-interface IUserAndPostsContextProviderProps {
+interface IApiContextProviderProps {
   children: ReactNode
 }
 
-export const UserAndPostsContext = createContext({} as IUserAndPostsContextType)
+export const ApiContext = createContext({} as IApiContextType)
 
-export function UserAndPostsContextProvider({
-  children,
-}: IUserAndPostsContextProviderProps) {
+export function ApiContextProvider({ children }: IApiContextProviderProps) {
   const [profile, setProfile] = useState({} as IProfile)
   const [posts, setPosts] = useState({
     total: 0,
@@ -89,10 +87,8 @@ export function UserAndPostsContextProvider({
   }, [])
 
   return (
-    <UserAndPostsContext.Provider
-      value={{ profile, posts, fetchProfile, fetchPosts }}
-    >
+    <ApiContext.Provider value={{ profile, posts, fetchProfile, fetchPosts }}>
       {children}
-    </UserAndPostsContext.Provider>
+    </ApiContext.Provider>
   )
 }

@@ -5,11 +5,11 @@ import { FindPostsForm } from '../../components/FindPostsForm'
 import { Loader } from '../../components/Loader'
 import { PostCard } from '../../components/PostCard'
 import { Profile } from '../../components/Profile'
-import { UserAndPostsContext } from '../../contexts/UserAndPostsContext'
+import { ApiContext } from '../../contexts/ApiContext'
 import { HomeContainer, PostsListsContainer } from './styles'
 
 export function Home() {
-  const { posts, fetchPosts, fetchProfile } = useContext(UserAndPostsContext)
+  const { posts, fetchPosts, fetchProfile } = useContext(ApiContext)
 
   useEffect(() => {
     fetchProfile()

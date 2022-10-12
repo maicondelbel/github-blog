@@ -3,14 +3,14 @@ import { InputContainer } from '../Input/styles'
 import { Title } from '../Title'
 import { FindPostsFormContainer, FindPostsFormHeader } from './styles'
 import { useForm } from 'react-hook-form'
-import { UserAndPostsContext } from '../../contexts/UserAndPostsContext'
+import { ApiContext } from '../../contexts/ApiContext'
 
 interface ISearchFormInput {
   query: string
 }
 
 export function FindPostsForm() {
-  const { posts, fetchPosts } = useContext(UserAndPostsContext)
+  const { posts, fetchPosts } = useContext(ApiContext)
   const { register, handleSubmit } = useForm<ISearchFormInput>()
 
   async function handleSearchPost(data: ISearchFormInput) {

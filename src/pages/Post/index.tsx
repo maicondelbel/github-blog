@@ -5,11 +5,11 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
 import { useContext } from 'react'
-import { UserAndPostsContext } from '../../contexts/UserAndPostsContext'
+import { ApiContext } from '../../contexts/ApiContext'
 
 export function Post() {
   const { slug } = useParams<{ slug: string }>()
-  const { posts } = useContext(UserAndPostsContext)
+  const { posts } = useContext(ApiContext)
 
   const currentPost = posts.items.find((post) => post.number === Number(slug))
 
