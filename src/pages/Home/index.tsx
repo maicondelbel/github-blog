@@ -25,7 +25,7 @@ export function Home() {
         {posts?.items &&
           posts?.items.map((post, index) => {
             return (
-              <NavLink key={index} to={`/post/${post.number}`}>
+              <NavLink key={index} to={`post/${post.number}`}>
                 <PostCard
                   title={post.title}
                   createdAt={post.created_at}
