@@ -83,7 +83,7 @@ Error generating stack: `+a.message+`
 `;function ko({size:e,children:t,as:n}){return J(w8,{as:n,size:e,children:t})}const k8=Ve.header`
   height: 18.5rem;
   background-color: ${e=>e.theme["base-profile"]};
-  background-image: url(/header-background.png);
+  background-image: url(header-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%, 50%;
