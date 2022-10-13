@@ -15,7 +15,9 @@ export function PostCard({ title, body, createdAt }: IPostCardProps) {
   return (
     <PostCardContainer>
       <PostCardHeader>
-        <Title size="medium">{title}</Title>
+        <Title as={'h2'} size="medium">
+          {title}
+        </Title>
         <span>{distanceToNowConverter(createdAt)}</span>
       </PostCardHeader>
 

@@ -9,7 +9,7 @@ export const PostInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  h1 {
+  h2 {
     margin-top: 1.25rem;
   }
 

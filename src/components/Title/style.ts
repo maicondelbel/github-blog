@@ -10,7 +10,7 @@ interface ITitleContainer {
   size: keyof typeof FONT_SIZE
 }
 
-export const TitleContainer = styled.h1<ITitleContainer>`
+export const TitleContainer = styled.span<ITitleContainer>`
   font-size: ${(props) => FONT_SIZE[props.size]};
   color: ${(props) => props.theme['base-title']};
   font-weight: bold;

@@ -31,7 +31,7 @@ export const PostCardHeader = styled.header`
   justify-content: space-between;
   gap: 1rem;
 
-  h1:first-child {
+  h2:first-child {
     flex: 1;
   }
 `

@@ -39,7 +39,9 @@ export function PostInfo({
           VER NO GITHUB <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </Link>
       </PostInfoHeaderBoxContainer>
-      <Title size="large">{title}</Title>
+      <Title as={'h2'} size="large">
+        {title}
+      </Title>
       <IconList>
         <IconListItem>
           <FontAwesomeIcon icon={faGithub} /> {user?.login}

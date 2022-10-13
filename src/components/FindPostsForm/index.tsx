@@ -20,7 +20,9 @@ export function FindPostsForm() {
   return (
     <FindPostsFormContainer onSubmit={handleSubmit(handleSearchPost)}>
       <FindPostsFormHeader>
-        <Title size="small">Publicações</Title>
+        <Title as={'h3'} size="small">
+          Publicações
+        </Title>
         <span>
           {posts?.total === 1
             ? `${posts?.total} publicação`
