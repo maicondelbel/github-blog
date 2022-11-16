@@ -32,7 +32,7 @@ export function PostInfo({
   return (
     <PostInfoContainer>
       <PostInfoHeaderBoxContainer>
-        <NavLink to="../">
+        <NavLink to="/">
           <FontAwesomeIcon icon={faChevronLeft} /> Voltar
         </NavLink>
         <Link href={url} target={'_blank'}>

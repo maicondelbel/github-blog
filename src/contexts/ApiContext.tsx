@@ -34,6 +34,7 @@ interface IPosts {
 interface IApiContextType {
   profile: IProfile
   posts: IPosts
+  isLoading: boolean
   fetchProfile: () => Promise<void>
   fetchPosts: (query?: string) => Promise<void>
 }
@@ -45,6 +46,7 @@ interface IApiContextProviderProps {
 export const ApiContext = createContext({} as IApiContextType)
 
 export function ApiContextProvider({ children }: IApiContextProviderProps) {
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   const [profile, setProfile] = useState({} as IProfile)
   const [posts, setPosts] = useState({
     total: 0,
@@ -56,6 +58,7 @@ export function ApiContextProvider({ children }: IApiContextProviderProps) {
 
   async function fetchProfile() {
     try {
+      setIsLoading(true)
       const response = await api.get(`/users/${userName}`)
 
       setProfile(response.data)
@@ -63,11 +66,14 @@ export function ApiContextProvider({ children }: IApiContextProviderProps) {
       const err = error as AxiosError
       console.log(err.response?.data)
       alert('Erro ao receber os dados do usuário!')
+    } finally {
+      setIsLoading(false)
     }
   }
 
   async function fetchPosts(query?: string) {
     try {
+      setIsLoading(true)
       const response = await api.get(
         `search/issues?q=${query || ' '}%20repo:${userName}/${repository}`,
       )
@@ -83,6 +89,8 @@ export function ApiContextProvider({ children }: IApiContextProviderProps) {
       const err = error as AxiosError
       console.log(err.response?.data)
       alert('Erro ao receber os dados das postagens!')
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -92,7 +100,9 @@ export function ApiContextProvider({ children }: IApiContextProviderProps) {
   }, [])
 
   return (
-    <ApiContext.Provider value={{ profile, posts, fetchProfile, fetchPosts }}>
+    <ApiContext.Provider
+      value={{ profile, posts, isLoading, fetchProfile, fetchPosts }}
+    >
       {children}
     </ApiContext.Provider>
   )

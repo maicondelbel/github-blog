@@ -3,9 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://maicondelbel.com/ignite-lab/github-blog/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --base=/github-blog/",
+    "build": "tsc && vite build",
+    "build:cloud": "tsc && vite build --base=/github-blog/",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

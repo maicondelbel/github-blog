@@ -8,7 +8,7 @@ import { defaultTheme } from './styles/themes/default'
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
+      <BrowserRouter basename={`${import.meta.env.VITE_BASE_URL}`}>
         <ApiContextProvider>
           <Router />
         </ApiContextProvider>
