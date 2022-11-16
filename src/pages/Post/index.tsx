@@ -3,7 +3,6 @@ import { PostContainer, PostContent, PostWrapper } from './styles'
 import { PostInfo } from '../../components/PostInfo'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import rehypeHighlight from 'rehype-highlight'
 import { useContext } from 'react'
 import { ApiContext } from '../../contexts/ApiContext'
 
@@ -24,10 +23,7 @@ export function Post() {
               url={currentPost?.html_url}
             />
             <PostContent>
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                rehypePlugins={[rehypeHighlight]}
-              >
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>
                 {currentPost?.body}
               </ReactMarkdown>
             </PostContent>

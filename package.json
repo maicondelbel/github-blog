@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "build:cloud": "tsc && vite build --base=/github-blog/",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:cloud",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
@@ -26,7 +26,6 @@
     "react-hook-form": "^7.37.0",
     "react-markdown": "^8.0.3",
     "react-router-dom": "^6.4.2",
-    "rehype-highlight": "^5.0.2",
     "rehype-truncate": "^1.2.2",
     "remark-gfm": "^3.0.1",
     "remark-strip-html": "^1.0.2",
