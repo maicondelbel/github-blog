@@ -83,7 +83,7 @@ Error generating stack: `+a.message+`
 `;function co({size:e,children:t,as:n}){return q(w7,{as:n,size:e,children:t})}const k7=Be.header`
   height: 18.5rem;
   background-color: ${e=>e.theme["base-profile"]};
-  background-image: url(/header-background.png);
+  background-image: url(header-background.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%, 50%;
@@ -1026,7 +1026,7 @@ In order to be iterable, non-array objects must have a [Symbol.iterator]() metho
     display: contents;
     text-decoration: none;
   }
-`;function FE(){const{posts:e,fetchPosts:t,isLoading:n,fetchProfile:r}=ne.exports.useContext(uo);return ne.exports.useEffect(()=>{r(),t()},[]),ke(TE,{children:[q(OE,{}),q(Q7,{}),ke(_E,{children:[n&&q(J6,{}),!n&&(e==null?void 0:e.items.map((i,a)=>q(hy,{to:`/post/${i.number}`,children:q(wE,{title:i.title,createdAt:i.created_at,body:i.body})},a)))]})]})}const LE=Be.div`
+`;function FE(){const{posts:e,fetchPosts:t,isLoading:n,fetchProfile:r}=ne.exports.useContext(uo);return ne.exports.useEffect(()=>{r(),t()},[]),ke(TE,{children:[q(OE,{}),q(Q7,{}),ke(_E,{children:[n&&q(J6,{}),!n&&(e==null?void 0:e.items.map((i,a)=>q(hy,{to:`/post/${i.number}`,children:q(wE,{title:i.title,createdAt:i.created_at,body:i.body})},a))),(e==null?void 0:e.items.length)===0&&q("p",{children:"Nada para mostrar!"})]})]})}const LE=Be.div`
   max-width: 54rem;
   margin-left: auto;
   margin-right: auto;
